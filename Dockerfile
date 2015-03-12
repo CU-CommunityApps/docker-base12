@@ -9,8 +9,7 @@ RUN \
     unzip \
     vim \ 
     wget \
-    ruby \
-    ruby-dev && \
+    ruby1.9.3 && \
   rm -rf /var/lib/apt/lists/*
   
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
