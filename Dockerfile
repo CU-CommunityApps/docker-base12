@@ -2,17 +2,18 @@ FROM ubuntu:12.04
 
 # Install.
 RUN \
-  apt-get update && apt-get install -y \
-    build-essential \ 
+  apt-get update && apt-get install --no-install-recommends -y \
+    build-essential \
     curl \
     git \
     unzip \
-    vim \ 
+    vim \
     wget \
+    openssh-client \
     ruby1.9.3 && \
   rm -rf /var/lib/apt/lists/*
 
-RUN rm /etc/localtime 
+RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 
 RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
