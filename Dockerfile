@@ -16,9 +16,10 @@ RUN \
 RUN rm /etc/localtime
 RUN ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 
-RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-RUN gem install puppet -v 3.7.5 && \
-    gem install librarian-puppet -v 2.1.0
+RUN echo "gem: --no-ri --no-rdoc" > ~/.gemrc &&\
+ gem install puppet -v 3.7.5 && \
+ gem install librarian-puppet -v 2.1.0 && \
+ gem install hiera-eyaml -v 2.1.0
 
 # Set environment variables.
 ENV HOME /root
